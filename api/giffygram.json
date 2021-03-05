@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "name": "Jackson",
+      "email": "jacksonrgoodman@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "Stan",
+      "email": "stan@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "Kevin",
+      "email": "kevin@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Kevin2",
+      "email": "kevin2@gmail.com",
+      "id": 4
+    }
+  ],
+  "posts": [
+    {
+      "userId": 1,
+      "imageURL": "https://media.giphy.com/media/26xBI73gWquCBBCDe/giphy.gif",
+      "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+      "timestamp": 1561695022812,
+      "title": "Enhanced global utilisation",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "imageURL": "https://media.giphy.com/media/dvgnz1U9fiK3TyfncD/giphy.gif",
+      "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+      "timestamp": 1561695022812,
+      "title": "I accidentally called postman postmates last night",
+      "id": 2
+    }
+  ],
+  "messages": []
+}
