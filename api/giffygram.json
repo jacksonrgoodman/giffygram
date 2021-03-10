@@ -37,6 +37,22 @@
       "timestamp": 1561695022812,
       "title": "I accidentally called postman postmates last night",
       "id": 2
+    },
+    {
+      "userId": "Jackson",
+      "imageURL": "https://media.giphy.com/media/10zsjaH4g0GgmY/giphy.gif",
+      "description": "I don't feel so good mr.Krabs",
+      "timestamp": 1561695022812,
+      "title": "Spongebob Memes to dull the plane",
+      "id": 3
+    },
+    {
+      "userId": "Jackson",
+      "imageURL": "https://i.ibb.co/VJ85c80/1607310338133.gif",
+      "description": "My favorite gif meme about my favorite game",
+      "timestamp": 1561695022812,
+      "title": "Those boots are ruined. I could kill that guar.",
+      "id": 4
     }
   ],
   "messages": []
