@@ -5,7 +5,7 @@ import {Footer} from "./nav/Footer.js";
 import {PostEntry} from "./feed/PostEntry.js";
 import {PostEdit} from "./feed/PostEdit.js";
 /**
-*!Main logic module for what should happen on initial page load for Giffygram
+*?Main logic module for what should happen on initial page load for Giffygram
 */
 
 //? Get a reference to the location on the DOM where the app will display
@@ -34,11 +34,9 @@ directMessage.addEventListener("click", event => {
 applicationElement.addEventListener("click", event => {
     event.preventDefault();
     if (event.target.id.startsWith("edit")) {
-        // debugger
         const postId = event.target.id.split("--")[1];
         getSinglePost(postId)
             .then(response => {
-            debugger
             showEdit(response);
         })
     }
@@ -48,7 +46,7 @@ applicationElement.addEventListener("click", event => {
     event.preventDefault();
     if (event.target.id.startsWith("updatePost")) {
         const postId = event.target.id.split("__")[1];
-        //collect all the details into an object
+        //? collect all the details into an object
         const title = document.querySelector("input[name='postTitle']").value
         const url = document.querySelector("input[name='postURL']").value
       const description = document.querySelector("textarea[name='postDescription']").value
@@ -114,6 +112,7 @@ const showFilteredPosts = (year) => {
 applicationElement.addEventListener("click", event => {
     if (event.target.id === "newPost__cancel") {
         //? clear the input fields
+        showPostEntry();
     }
 })
 applicationElement.addEventListener("click", event => {
@@ -138,6 +137,7 @@ applicationElement.addEventListener("click", event => {
         .then(response => {
             console.log("what is the new post response", response)
             showPostList(response);
+            showPostEntry();
         })
     }
 })
@@ -149,6 +149,7 @@ const showPostEntry = () => {
 }
 
 const showPostList = () => {
+    //? Get a reference to the location on the DOM where all the posts will display
     const postElement = document.querySelector(".postList");
     getPosts().then((allPosts) => {
         postElement.innerHTML = PostList(allPosts.reverse());
@@ -156,6 +157,7 @@ const showPostList = () => {
 }
 
 const showEdit = (postObj) => {
+    //? Get a reference to the location on the DOM where the Edit will display
     const entryElement = document.querySelector(".entryForm");
     entryElement.innerHTML = PostEdit(postObj);
   }
