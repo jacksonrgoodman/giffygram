@@ -31,12 +31,6 @@ directMessage.addEventListener("click", event => {
 	}
 })
 //! EDIT EVENT LISTENER
-// applicationElement.addEventListener("click", (event) => {
-// 	if (event.target.id.startsWith("edit")){
-// 		console.log("post clicked", event.target.id.split("--"))
-// 		console.log("the id is", event.target.id.split("--")[1])
-// 	}
-// })
 applicationElement.addEventListener("click", event => {
     event.preventDefault();
     if (event.target.id.startsWith("edit")) {
@@ -49,7 +43,7 @@ applicationElement.addEventListener("click", event => {
         })
     }
 })
-
+//! UPDATE POST EVENT LISTENER
 applicationElement.addEventListener("click", event => {
     event.preventDefault();
     if (event.target.id.startsWith("updatePost")) {
@@ -68,11 +62,11 @@ applicationElement.addEventListener("click", event => {
         timestamp: parseInt(timestamp),
         id: parseInt(postId)
       }
-      
+      showPostEntry();
       updatePost(postObject)
       .then(response => {
           showPostList();
-        })
+        });
     }
 })
 //! DELETE EVENT LISTENER
