@@ -46,4 +46,12 @@ h1, h2, h3, h4, h5, h6 {
 .loginForm {
     margin: 0 25%;
 }
-
+.giffygram {
+    margin-bottom: 3.8em;
+}
+.entryForm {
+    margin-top: 3.8em;
+}
+.center {
+    text-align: center;
+}

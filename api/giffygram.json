@@ -39,23 +39,7 @@
       "id": 2
     },
     {
-      "userId": "Jackson",
-      "imageURL": "https://media.giphy.com/media/10zsjaH4g0GgmY/giphy.gif",
-      "description": "I don't feel so good mr.Krabs",
-      "timestamp": 1561695022812,
-      "title": "Spongebob Memes to dull the plane",
-      "id": 3
-    },
-    {
-      "userId": "Jackson",
-      "imageURL": "https://i.ibb.co/VJ85c80/1607310338133.gif",
-      "description": "My favorite gif meme about my favorite game",
-      "timestamp": 1615396964904,
-      "title": "Those boots are ruined. I could kill that guar.",
-      "id": 4
-    },
-    {
-      "title": "",
+      "title": "first test",
       "imageURL": "https://media.giphy.com/media/DHqth0hVQoIzS/giphy.gif",
       "description": "trying to post from localhost:5000\n",
       "userId": 1,
@@ -63,92 +47,19 @@
       "id": 5
     },
     {
-      "title": "",
-      "imageURL": "https://media.giphy.com/media/DHqth0hVQoIzS/giphy.gif",
-      "description": "trying to post from localhost:5000\n",
-      "userId": 1,
-      "timestamp": 1615402767914,
+      "title": "here goes nothing",
+      "imageURL": "https://media.giphy.com/media/Na9zwMCcLlzK8/giphy.gif",
+      "description": "posting from my giffygram webzone",
+      "timestamp": 1615477407747,
       "id": 6
     },
     {
-      "title": "",
-      "imageURL": "https://media.giphy.com/media/DHqth0hVQoIzS/giphy.gif",
-      "description": "trying to post from localhost:5000\n",
+      "title": "got some clarity",
+      "imageURL": "https://media.giphy.com/media/LKqDgLlK6SuIM/giphy.gif",
+      "description": "dang",
       "userId": 1,
-      "timestamp": 1615402768155,
+      "timestamp": 1615479679282,
       "id": 7
-    },
-    {
-      "title": "",
-      "imageURL": "https://media.giphy.com/media/DHqth0hVQoIzS/giphy.gif",
-      "description": "trying to post from localhost:5000\n",
-      "userId": 1,
-      "timestamp": 1615402768399,
-      "id": 8
-    },
-    {
-      "title": "",
-      "imageURL": "https://media.giphy.com/media/DHqth0hVQoIzS/giphy.gif",
-      "description": "trying to post from localhost:5000\n",
-      "userId": 1,
-      "timestamp": 1615402768577,
-      "id": 9
-    },
-    {
-      "title": "",
-      "imageURL": "https://media.giphy.com/media/DHqth0hVQoIzS/giphy.gif",
-      "description": "trying to post from localhost:5000\n",
-      "userId": 1,
-      "timestamp": 1615402768758,
-      "id": 10
-    },
-    {
-      "title": "",
-      "imageURL": "https://media.giphy.com/media/DHqth0hVQoIzS/giphy.gif",
-      "description": "trying to post from localhost:5000\n",
-      "userId": 1,
-      "timestamp": 1615402768916,
-      "id": 11
-    },
-    {
-      "title": "",
-      "imageURL": "https://media.giphy.com/media/DHqth0hVQoIzS/giphy.gif",
-      "description": "trying to post from localhost:5000\n",
-      "userId": 1,
-      "timestamp": 1615402769088,
-      "id": 12
-    },
-    {
-      "title": "",
-      "imageURL": "https://media.giphy.com/media/DHqth0hVQoIzS/giphy.gif",
-      "description": "trying to post from localhost:5000\n",
-      "userId": 1,
-      "timestamp": 1615402769269,
-      "id": 13
-    },
-    {
-      "title": "",
-      "imageURL": "https://media.giphy.com/media/DHqth0hVQoIzS/giphy.gif",
-      "description": "trying to post from localhost:5000\n",
-      "userId": 1,
-      "timestamp": 1615402769425,
-      "id": 14
-    },
-    {
-      "title": "",
-      "imageURL": "https://media.giphy.com/media/DHqth0hVQoIzS/giphy.gif",
-      "description": "trying to post from localhost:5000\n",
-      "userId": 1,
-      "timestamp": 1615402769592,
-      "id": 15
-    },
-    {
-      "title": "",
-      "imageURL": "https://media.giphy.com/media/DHqth0hVQoIzS/giphy.gif",
-      "description": "trying to post from localhost:5000\n",
-      "userId": 1,
-      "timestamp": 1615402769749,
-      "id": 16
     }
   ],
   "messages": []
