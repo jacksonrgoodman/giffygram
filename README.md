@@ -5,11 +5,11 @@ GiffyGram Project for NSS
 git clone this repository to your local directory.
 
 # Testing Instructions
-1. run serve in root
+1. run `serve` in root
 
-2. run json-server -p 8088 -w giffygram.json in the api directory
+2. run `json-server -p 8088 -w giffygram.json` in the api directory
 
-3. navigate in browser to locoalhost:5000/src
+3. navigate in browser to <span style="color:green"> *locoalhost:5000/src*</span>
 
 4. Have fun and be yourself :D 💯
 
