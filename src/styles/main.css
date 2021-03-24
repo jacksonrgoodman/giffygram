@@ -50,8 +50,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 3.8em;
 }
 .entryForm {
-    margin-top: 3.8em;
+    margin-top: 0px;
 }
 .center {
+    margin-top: 3.8em;
     text-align: center;
 }

@@ -1,20 +1,75 @@
-import {getPosts, usePostCollection, createPost, getSinglePost, updatePost, getLoggedInUser, deletePost} from "./data/DataManager.js";
+import {getPosts, logoutUser, registerUser, loginUser, setLoggedInUser, usePostCollection, createPost, getSinglePost, updatePost, getLoggedInUser, deletePost} from "./data/DataManager.js";
 import {PostList} from "./feed/PostList.js";
 import {NavBar} from "./nav/NavBar.js";
 import {Footer} from "./nav/Footer.js";
 import {PostEntry} from "./feed/PostEntry.js";
 import {PostEdit} from "./feed/PostEdit.js";
+import {LoginForm} from "./auth/LoginForm.js";
+import {RegisterForm} from "./auth/RegisterForm.js";
+
 /**
 *?Main logic module for what should happen on initial page load for Giffygram
 */
 
 //? Get a reference to the location on the DOM where the app will display
-//! LOGOUT EVENT LISTENER
 const applicationElement = document.querySelector(".giffygram");
+
 applicationElement.addEventListener("click", event => {
-	if (event.target.id === "logout"){
-		console.log("You clicked on logout")
-	}
+    event.preventDefault();
+    if (event.target.id === "login__submit") {
+      //collect all the details into an object
+      const userObject = {
+        name: document.querySelector("input[name='name']").value,
+        email: document.querySelector("input[name='email']").value
+      }
+      loginUser(userObject)
+      .then(dbUserObj => {
+        if(dbUserObj){
+          sessionStorage.setItem("user", JSON.stringify(dbUserObj));
+          startGiffyGram();
+        }else {
+          //got a false value - no user
+          const entryElement = document.querySelector(".entryForm");
+          entryElement.innerHTML = `<p class="center">That user does not exist. Please try again or register for your free account.</p> ${LoginForm()} <hr/> <hr/> ${RegisterForm()}`;
+        }
+      })
+    }
+})
+
+applicationElement.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id === "register__submit") {
+      //collect all the details into an object
+      const userObject = {
+        name: document.querySelector("input[name='registerName']").value,
+        email: document.querySelector("input[name='registerEmail']").value
+      }
+      registerUser(userObject)
+      .then(dbUserObj => {
+        sessionStorage.setItem("user", JSON.stringify(dbUserObj));
+        startGiffyGram();
+      })
+    }
+})
+
+//! LOGOUT EVENT LISTENER
+applicationElement.addEventListener("click", event => {
+    if (event.target.id === "logout") {
+      logoutUser();
+    //   console.log(getLoggedInUser());
+      sessionStorage.clear();
+      checkForUser();
+    }
+})
+applicationElement.addEventListener("click", event => {
+    if (event.target.id === "myPosts"){
+        //? this is where isht needs to go
+        showPostList().name === getLoggedInUser().name
+
+
+        
+        console.log("show my posts")
+    }
 })
 //!HOME ICON EVENT LISTENER
 const homeButton = document.querySelector(".giffygram");
@@ -83,14 +138,14 @@ applicationElement.addEventListener("change", event => {
     if (event.target.id === "yearSelection") {
         const yearAsNumber = parseInt(event.target.value)
         
-        console.log(`User wants to see posts since ${yearAsNumber}`)
+        // console.log(`User wants to see posts since ${yearAsNumber}`)
     }
 })
 //! YEAR FILTER EVENT LISTENER
 applicationElement.addEventListener("change", event => {
     if (event.target.id === "yearSelection") {
         const yearAsNumber = parseInt(event.target.value)
-        console.log(`User wants to see posts since ${yearAsNumber}`)
+        // console.log(`User wants to see posts since ${yearAsNumber}`)
       //? invoke a filter function passing the year as an argument
       showFilteredPosts(yearAsNumber);
     }
@@ -128,19 +183,38 @@ applicationElement.addEventListener("click", event => {
             title: title.value,
             imageURL: url.value,
             description: description,
-            userId: getLoggedInUser,
+            userId: getLoggedInUser().id,
             timestamp: Date.now()
         }
   
         //? be sure to import from the DataManager
         createPost(postObject)
         .then(response => {
-            console.log("what is the new post response", response)
+            // console.log("what is the new post response", response)
             showPostList(response);
             showPostEntry();
         })
     }
 })
+
+const checkForUser = () => {
+    if (sessionStorage.getItem("user")){
+        setLoggedInUser(JSON.parse(sessionStorage.getItem("user")));
+      startGiffyGram();
+    }else {
+         showLoginRegister();
+    }
+}
+
+const showLoginRegister = () => {
+    showNavBar();
+    const entryElement = document.querySelector(".entryForm");
+    //template strings can be used here too
+    entryElement.innerHTML = `${LoginForm()} <hr/> <hr/> ${RegisterForm()}`;
+    //make sure the post list is cleared out too
+  const postElement = document.querySelector(".postList");
+  postElement.innerHTML = "";
+}
 
 const showPostEntry = () => { 
     //? Get a reference to the location on the DOM where the nav will display
@@ -186,4 +260,4 @@ const startGiffyGram = () => {
     showPostEntry();
 };
 //? Are you defining the function here or invoking it?
-startGiffyGram();
+checkForUser();
