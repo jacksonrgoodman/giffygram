@@ -1,4 +1,4 @@
-import {getPosts, logoutUser, registerUser, loginUser, setLoggedInUser, usePostCollection, createPost, getSinglePost, updatePost, getLoggedInUser, deletePost} from "./data/DataManager.js";
+import {getPosts, postLike, getLoggedInUserPosts, logoutUser, registerUser, loginUser, setLoggedInUser, usePostCollection, createPost, getSinglePost, updatePost, getLoggedInUser, deletePost} from "./data/DataManager.js";
 import {PostList} from "./feed/PostList.js";
 import {NavBar} from "./nav/NavBar.js";
 import {Footer} from "./nav/Footer.js";
@@ -61,16 +61,19 @@ applicationElement.addEventListener("click", event => {
       checkForUser();
     }
 })
+
+//! MY POSTS BUTTON
 applicationElement.addEventListener("click", event => {
     if (event.target.id === "myPosts"){
         //? this is where isht needs to go
-        showPostList().name === getLoggedInUser().name
-
-
-        
-        console.log("show my posts")
+        // showPostList().name === getLoggedInUser().name
+        const postElement = document.querySelector(".postList")
+        getLoggedInUserPosts()
+        .then(usersPosts =>
+            postElement.innerHTML = PostList(usersPosts))
     }
 })
+
 //!HOME ICON EVENT LISTENER
 const homeButton = document.querySelector(".giffygram");
 homeButton.addEventListener("click", event => {
@@ -83,6 +86,20 @@ const directMessage = document.querySelector(".giffygram");
 directMessage.addEventListener("click", event => {
 	if (event.target.id === "directMessageIcon"){
 		console.log("DIRECT MESSAGES")
+	}
+})
+applicationElement.addEventListener("click", event => {
+	event.preventDefault();
+	if (event.target.id.startsWith("like")) {
+        console.log("eventLike",event.target.id)
+	  const likeObject = {
+		 postId: event.target.id.split("__")[1],
+		 userId: getLoggedInUser().id
+	  }
+	  postLike(likeObject)
+		.then(response => {
+		  showPostList();
+		})
 	}
 })
 //! EDIT EVENT LISTENER

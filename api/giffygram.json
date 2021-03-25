@@ -64,15 +64,8 @@
       "userId": 2,
       "timestamp": 1616610819188,
       "id": 9
-    },
-    {
-      "title": "aaaa",
-      "imageURL": "",
-      "description": "aaaa",
-      "userId": 3,
-      "timestamp": 1616619155026,
-      "id": 10
     }
   ],
+  "userLikes": [],
   "messages": []
 }
