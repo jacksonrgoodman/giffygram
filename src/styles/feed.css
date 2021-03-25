@@ -5,3 +5,14 @@
     justify-content: center;
 }
 
+.likeFeature {
+    display: flex;
+}
+
+.lifeFeature button {
+    border: 2px solid red;
+}
+
+.ownerButtons {
+    display: flex;
+}

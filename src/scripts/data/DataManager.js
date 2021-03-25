@@ -3,6 +3,23 @@ export const getUsers = () => {
     .then(response => response.json())
 };
 
+export const postLike = likeObject => {
+  return fetch(`http://localhost:8088/userLikes/`, {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(likeObject)
+  })
+      .then(response => response.json())
+      .then(getPosts)
+}
+
+export const getLikes = (postId) => {
+  return fetch(`http://localhost:8088/userLikes?postId=${postId}`)
+    .then(response => response.json())
+}
+
 //change declaration to let
 let loggedInUser = {}
 
@@ -13,6 +30,21 @@ export const logoutUser = () => {
 export const getLoggedInUser = () => {
 	return {...loggedInUser};
 };
+
+export const getLoggedInUserPosts = () => {
+  debugger
+  const userId =  getLoggedInUser().id
+  return fetch (`http://localhost:8088/posts?_expand=user`)
+  .then(response => response.json())
+  .then(allPosts => {
+    let userPostsArray = [];
+    for (const eachPost of allPosts) {
+      if (eachPost.userId === userId) {
+        userPostsArray.push(eachPost)
+      }
+    }return userPostsArray
+  })
+}
 
 export const createPost = postObj => {
   return fetch("http://localhost:8088/posts", {
