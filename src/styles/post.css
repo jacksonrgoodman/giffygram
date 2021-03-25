@@ -53,6 +53,10 @@
     flex-basis: 50%;
 }
 
+/* .post__title {
+    margin-bottom: 0%;
+} */
+
 .post__image {
     width: 100%;
 }

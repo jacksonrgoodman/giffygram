@@ -31,7 +31,6 @@
     height: 2rem;
 }
 
-
 .navigation__message {
     margin-left: auto;
     margin-right: 4em;
@@ -39,6 +38,16 @@
     flex-direction: row;
     position: relative;
 }
+.navigation__myPosts {
+    margin-left: auto;
+    margin-right: 4em;
+    display: flex;
+    flex-direction: row;
+    position: right;
+    justify-content: flex-end;
+}
+/* #myPosts {
+} */
 
 .navigation__message > img {
     height: 2rem;

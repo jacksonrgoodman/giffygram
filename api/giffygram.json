@@ -6,36 +6,31 @@
       "id": 1
     },
     {
-      "name": "Stan",
-      "email": "stan@gmail.com",
+      "name": "Ricky",
+      "email": "bobby",
       "id": 2
     },
     {
-      "name": "Kevin",
-      "email": "kevin@gmail.com",
+      "name": "Kathy",
+      "email": "3",
       "id": 3
-    },
-    {
-      "name": "Kevin2",
-      "email": "kevin2@gmail.com",
-      "id": 4
     }
   ],
   "posts": [
     {
-      "userId": 1,
+      "title": "first post",
       "imageURL": "https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif",
-      "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+      "description": "first post",
+      "userId": 1,
       "timestamp": 1561695022812,
-      "title": "Enhanced global utilisation",
       "id": 1
     },
     {
-      "userId": 1,
-      "imageURL": "https://media.giphy.com/media/dvgnz1U9fiK3TyfncD/giphy.gif",
-      "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
-      "timestamp": 1561695022812,
       "title": "I accidentally called postman postmates last night",
+      "imageURL": "https://media.giphy.com/media/dvgnz1U9fiK3TyfncD/giphy.gif",
+      "description": "clear",
+      "userId": 1,
+      "timestamp": 1561695022812,
       "id": 2
     },
     {
@@ -50,6 +45,7 @@
       "title": "here goes nothing",
       "imageURL": "https://media.giphy.com/media/Na9zwMCcLlzK8/giphy.gif",
       "description": "posting from my giffygram webzone",
+      "userId": 1,
       "timestamp": 1615477407747,
       "id": 6
     },
@@ -60,6 +56,22 @@
       "userId": 1,
       "timestamp": 1615479679282,
       "id": 7
+    },
+    {
+      "title": "Me and my friend",
+      "imageURL": "https://media.giphy.com/media/qr0FOwPgUk3Cw/giphy.gif",
+      "description": "blablabla",
+      "userId": 2,
+      "timestamp": 1616610819188,
+      "id": 9
+    },
+    {
+      "title": "aaaa",
+      "imageURL": "",
+      "description": "aaaa",
+      "userId": 3,
+      "timestamp": 1616619155026,
+      "id": 10
     }
   ],
   "messages": []
